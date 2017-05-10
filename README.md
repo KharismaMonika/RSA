@@ -44,5 +44,11 @@ Tugas 4 Keamanan Jaringan Implementasi Algoritma RSA
 - Alice mengirimkan public key kepada Bob, dan tetap merahasiakan private key yang digunakan. p dan q sangat sensitif dikarenakan merupakan faktorial dari N, dan membuat perhitungan dari d menghasilkan e. Jika p dan q tidak disimpan dalam bentuk CRT dari private key, maka p dan q telah terhapus bersama nilai-nilai lain dari proses pembangkitan kunci.
 
 ### Proses Enkripsi
+- Misalkan Bob ingin mengirim pesan m ke Alice. Bob mengubah m menjadi angka n < N, menggunakan protokol yang sebelumnya telah disepakati dan dikenal sebagai padding scheme.
+
+- Maka Bob memiliki n dan mengetahui N dan e, yang telah diumumkan oleh Alice. Bob kemudian menghitung ciphertext c yang terkait pada n:
+
+         {\displaystyle c=n^{e}\mod {N}} {\displaystyle c=n^{e}\mod {N}}
+- Perhitungan tersebut dapat diselesaikan dengan cepat menggunakan metode exponentiation by squaring. Bob kemudian mengirimkan c kepada Alice.
 
 ### Proses Dekripsi 
