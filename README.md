@@ -6,8 +6,8 @@ Tugas 4 Keamanan Jaringan Implementasi Algoritma RSA
 + 5114100092 Kharisma Monika D. P.
 
 ### Pengertian RSA 
-     RSA di bidang kriptografi adalah sebuah algoritma pada enkripsi public key. RSA merupakan algoritma pertama yang cocok untuk digital signature seperti halnya ekripsi, dan salah satu yang paling maju dalam bidang kriptografi public key. RSA masih digunakan secara luas dalam protokol electronic commerce, dan dipercaya dalam mengamnkan dengan menggunakan kunci yang cukup panjang.
-     Kekuatan algoritma ini terletak pada proses eksponensial, dan pemfaktoran bilangan menjadi 2 bilangan prima yang hingga kini perlu waktu yang lama untuk melakukan pemfaktorannya. Algoritma ini dinamakan sesuai dengan nama penemunya, Ron Rivest, Adi Shamir dan Adleman(Rivest-Shamir-Adleman) yang dipublikasikan pada tahun 1977 di MIT, menjawab tantangan yang diberikan algoritma pertukaran kunci Diffie Hellman.
+   RSA di bidang kriptografi adalah sebuah algoritma pada enkripsi public key. RSA merupakan algoritma pertama yang cocok untuk digital signature seperti halnya ekripsi, dan salah satu yang paling maju dalam bidang kriptografi public key. RSA masih digunakan secara luas dalam protokol electronic commerce, dan dipercaya dalam mengamnkan dengan menggunakan kunci yang cukup panjang.
+   Kekuatan algoritma ini terletak pada proses eksponensial, dan pemfaktoran bilangan menjadi 2 bilangan prima yang hingga kini perlu waktu yang lama untuk melakukan pemfaktorannya. Algoritma ini dinamakan sesuai dengan nama penemunya, Ron Rivest, Adi Shamir dan Adleman(Rivest-Shamir-Adleman) yang dipublikasikan pada tahun 1977 di MIT, menjawab tantangan yang diberikan algoritma pertukaran kunci Diffie Hellman.
 
 ### Pembuatan Kunci 
 - Semisal Alice berkeinginan untuk mengizinkan Bob untuk mengirimkan kepadanya sebuah pesan pribadi (private message) melalui media transmisi yang tidak aman (insecure). Alice melakukan langkah-langkah berikut untuk membuat pasangan kunci public key dan private key:
@@ -48,7 +48,10 @@ Tugas 4 Keamanan Jaringan Implementasi Algoritma RSA
 
 - Maka Bob memiliki n dan mengetahui N dan e, yang telah diumumkan oleh Alice. Bob kemudian menghitung ciphertext c yang terkait pada n:
 
-         {\displaystyle c=n^{e}\mod {N}} {\displaystyle c=n^{e}\mod {N}}
+         c=n^e mod N 
 - Perhitungan tersebut dapat diselesaikan dengan cepat menggunakan metode exponentiation by squaring. Bob kemudian mengirimkan c kepada Alice.
 
 ### Proses Dekripsi 
+- Alice menerima c dari Bob, dan mengetahui private key yang digunakan oleh Alice sendiri. Alice kemudian memulihkan n dari c dengan langkah-langkah berikut:
+     n=c^d mod N
+
