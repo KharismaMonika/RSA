@@ -33,29 +33,12 @@ def fpb(a, b):
         hasil = 0
         return hasil
 
-def multiplicative_inverse(e, phi):
-    d = 0
-    x1 = 0
-    x2 = 1
-    y1 = 1
-    temp_phi = phi
-
-    while e > 0:
-        temp1 = temp_phi / e
-        temp2 = temp_phi - temp1 * e
-        temp_phi = e
-        e = temp2
-
-        x = x2 - temp1 * x1
-        y = d - temp1 * y1
-
-        x2 = x1
-        x1 = x
-        d = y1
-        y1 = y
-
-    if temp_phi == 1:
-        return d + phi
+def nyarid(e,phi):
+    d=0
+    while d!=1:
+        e2 = random.randrange(1, phi)
+        d = (e2*e)%phi
+    return e2
 
 def generate_keypair(p, q):
     if not (is_prime(p) and is_prime(q)):
@@ -77,8 +60,7 @@ def generate_keypair(p, q):
         e = random.randrange(1, phi)
         g = fpb(e, phi)
 
-    # Mencri nilai d
-    d = multiplicative_inverse(e, phi)
+    d=nyarid(e,phi)
 
     return ((e, n), (d, n))
 
@@ -113,7 +95,8 @@ q = int(raw_input("Masukkan bilangan prima p harus berbeda dengan bilangan q: ")
 public, private = generate_keypair(p, q)
 rho = sign(mess, private)
 rho2 = str(rho)
-# print public
+print public
+print private
 mess2=str(mess)
 pstr1 = str(public[0])
 pstr2 = str(public[1])
