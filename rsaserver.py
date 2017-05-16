@@ -25,9 +25,13 @@ def is_prime(num):
 
 # ini cari FPB dengan algoritma Euclidian,
 def fpb(a, b):
-    while b != 0:
-        a, b = b, a % b
-    return a
+    cek = is_prime(a)
+    if cek is True:
+        hasil = b % a
+        return hasil
+    elif cek is not True:
+        hasil = 0
+        return hasil
 
 def multiplicative_inverse(e, phi):
     d = 0
