@@ -59,9 +59,6 @@ def generate_keypair(p, q):
         g = fpb(e, phi)
 
     d=nyarid(e,phi)
-    while d>phi:
-        d = nyarid(phi)
-
     return ((e, n), (d, n))
 
 def enkrip(pk, plaintext):
