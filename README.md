@@ -55,3 +55,6 @@ Tugas 4 Keamanan Jaringan Implementasi Algoritma RSA
 - Alice menerima c dari Bob, dan mengetahui private key yang digunakan oleh Alice sendiri. Alice kemudian memulihkan n dari c dengan langkah-langkah berikut:
      n=c^d mod N
 
+### Refrensi
+- PPT RSA Kelas KIJ F
+- Buku Kriptografi Rifki Sadikin
