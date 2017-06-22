@@ -123,7 +123,7 @@ while True:
         datu = connection.recv(4096)
         data_arr = pickle.loads(datu)
 
-        print 'Received autentikasi dan public key server', repr(data_arr)
+        print 'Received autentikasi dan public key client', repr(data_arr)
         global authc
         authc = int(data_arr[0])
         global p1
@@ -142,7 +142,7 @@ while True:
             # print berapa
             autc2 = int(data_client[0])
 
-            # print autc2
+            print autc2
             public2 = (p1,q1)
             verifikasi = verify(autc2, public2)
             data_client.pop(0)
@@ -150,10 +150,10 @@ while True:
             dekrips = dekrip(private, data_client)
             if verifikasi == authc:
                 print 'Data autentikasi sama! yaitu "%d"' % verifikasi
-                print >> sys.stderr, 'received dari Ical : "%s"' % dekrips
+                print >> sys.stderr, 'received dari Risma : "%s"' % dekrips
             else:
                 print 'Data autentikasi berbeda!'
-                print >> sys.stderr, 'Bukan dari Ical : "%s"' % dekrips
+                print >> sys.stderr, 'Bukan dari Risma : "%s"' % dekrips
 
             if dekrip:
                 message = raw_input('Risma : ')
